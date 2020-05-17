@@ -1,0 +1,121 @@
+.dashboard-container {
+    height: 100%;
+  
+    .source {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      color: #d59954;
+  
+      span {
+        color: white;
+        padding: 0.2rem 0.3rem;
+        border: 1px solid #d59954;
+        border-radius: 4px;
+        background: #d59954;
+        margin: 0 0.5rem;
+        font-weight: bold;
+      }
+    }
+  
+    .table-wrapper {
+      font-size: 0.9rem;
+      width: 100%;
+      height: calc(100% - 170px);
+      overflow: auto;
+  
+      td,
+      th {
+        text-align: left;
+        padding: 8px;
+      }
+  
+      tr:nth-child(even) {
+        background-color: rgba(227, 238, 249, 0.87);
+      }
+  
+      table {
+        width: 100%;
+        text-align: center;
+        border-collapse: separate; /* Don't collapse */
+        border-spacing: 0;
+      }
+  
+      table thead th {
+        /* Apply both top and bottom borders to the <th> */
+        position: sticky;
+        top: 0;
+        border-top: 1px solid #dee2e6;
+        border-bottom: 1px solid #dee2e6;
+        border-right: 1px solid #dee2e6;
+        color: #495057;
+        background-color: #c5e2ff;
+        z-index: 1;
+      }
+  
+      table td {
+        /* For cells, apply the border to one of each side only (right but not left, bottom but not top) */
+        border-bottom: 1px solid #dee2e6;
+        border-right: 1px solid #dee2e6;
+      }
+  
+      tr:hover {
+        background-color: #dae8f8;
+      }
+  
+      tr {
+        color: #1a1b1c;
+      }
+  
+      table th:first-child,
+      table td:first-child {
+        /* Apply a left border on the first <td> or <th> in a row */
+        border-left: 1px solid #dee2e6;
+      }
+  
+      .info-icon {
+        color: #bcbcbc;
+        margin-left: 0.5rem;
+      }
+  
+      .delta {
+        font-size: 0.6rem;
+        font-weight: 600;
+        margin: 0.1rem 0.3rem;
+  
+        .arrow {
+          border: solid;
+          border-width: 0 2px 2px 0;
+          display: inline-block;
+          padding: 2px;
+          margin-right: 0.15rem;
+  
+          &.up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+          }
+        }
+  
+        &.confirmed-delta {
+          color: red;
+        }
+  
+        &.recovered-delta {
+          color: green;
+        }
+  
+        &.death-delta {
+          color: gray;
+        }
+      }
+    }
+  
+    .options {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+      align-items: flex-start;
+      font-size: 0.7rem;
+    }
+  }
